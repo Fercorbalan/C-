@@ -1,0 +1,110 @@
+/*Ejercicio 1 - While
+Escribe una tabla de multiplicar del 1 al 10 para un número entero que recibe por consola. Es decir, un programa que presente para el 1:
+1 x 1 = 1
+1 x 2 = 2
+…
+1 x 10 = 10
+*/
+
+
+Console.WriteLine("Ejercicio 1");
+
+Console.WriteLine("Ingrese el numero para mostrar la tabla");
+int numero = Convert.ToInt32(Console.ReadLine());
+int ase = 1;
+
+while (ase <= 10)
+{
+    Console.WriteLine($"{numero} x {ase} = {ase*numero}"); //muestra la multiplicacion
+    ase++;
+}
+
+/*
+Ejercicio 2 - Do while
+Escribe un programa que realice estos pasos:
+•	Reciba al menos un número por consola
+•	Determine si el número es positivo o negativo
+•	Presente un contador para cada tipo (positivo y negativo).
+Nota: el cero se puede abordar en una clase adicional ya que no es ni positivo ni negativo. Tienes completa libertad para elegir el formato de la salida.
+*/
+
+Console.WriteLine("Ejercicio 2");
+
+Console.WriteLine();
+float positivos = 0;
+float negativos = 0;
+int contador = 0;
+do
+{
+    Console.Write("Ingrese el numero a controlar: ");
+    double numero2 = Convert.ToDouble(Console.Read());
+    if (numero2 < 0)
+    {
+        negativos++;
+    }
+    else
+    {
+        positivos++;
+    }
+   
+   Console.WriteLine($"La cantida de negativos son {negativos}, y los positivos son {positivos}");
+    contador++;
+} while (contador == 3);
+
+
+/*
+Ejercicio 3 - For
+Escribe un programa que realice estos pasos:
+•	Reciba 3 datos:
+o	ancho
+o	alto
+o	relleno o no
+•	Dibuje en consola con un mismo caracter, por ejemplo *, un rectángulo de las dimensiones introducidas y use el tercer dato para discernir si el rectángulo está relleno (tiene más * dentro) o no.
+•	En caso de recibir el mismo número n dos veces debe dibujar un cuadrado de lado n.
+•	Reto: Extiende el programa anterior para recibir otro número que sea el número de cuadrados o rectángulos que se deben dibujar en la pantalla. Ejemplos:
+o	Input: 2,2,2, relleno = true
+Output:
+** **
+** **
+o	Input: 3, 4, 1, relleno = false
+Output:
+***
+* *
+* *
+*/
+
+Console.WriteLine("Ejercicio 3");
+
+
+Console.WriteLine("Ingrese la altura: ");
+float altura = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese el Ancho: ");
+float ancho = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese si esta relleno: ");
+bool relleno = Convert.ToBoolean(Console.ReadLine());
+
+for (int i = 0; i < altura; i++) // Recorriendo el Ancho
+{
+    
+    for (int j = 0; j < ancho; j++) // Recorriendo el alto
+    {
+        
+        if (relleno == true) //Rellenanando el cuadro
+        {
+            Console.Write("* ");
+        }
+        else
+        {
+            if (i == 0 || i == (altura-1) || j == (ancho-1) || j == 0) // realizando el Marco con los limites del cuadro
+            {
+                Console.Write("* ");
+            }
+            else
+            {
+                Console.Write("  ");
+            }
+
+        }
+    }
+    Console.WriteLine();
+}
