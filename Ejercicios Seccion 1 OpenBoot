@@ -1,0 +1,41 @@
+using System.Diagnostics;
+
+namespace _1erProyecto
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int numero = 123;
+            double numeroDecimal = 5000.15;
+            
+
+
+            string prueba = "Prueba de Variable, ";
+            string prueba2 = "Prueba" + " de " +  "Concatenacion " + prueba + (numeroDecimal + numero);
+            label1.Text = prueba2;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int edad = 3;
+            bool esMayor = edad > 18;
+
+            if (esMayor)
+            {
+                label2.Text = "El usuario es Mayor de edad: ";
+            }
+            else 
+            {
+                label2.Text = "El ususario es menor de edad";
+            }
+            
+        }
+
+    }
+}
