@@ -1,0 +1,87 @@
+/*Ejercicio 1 - If
+
+Escribe un programa que:
+Pida datos a un cliente: Nombre, email, cupón
+Determine si un cliente tiene un cupon descuento
+Muestre un precio rebajado en función del descuento
+Muestre el precio de un producto sin descuento si no hay cupón
+Nota: puedes poner un precio fijo de un producto o uno variable.
+*/
+
+
+using System.Xml.Schema;
+
+Console.WriteLine("Ejercicio 1 - If"); // Ingreso de parametros Cliente
+Console.WriteLine("");
+Console.Write("Ingrese el Nombre del Cliente: ");
+string Nombre = Console.ReadLine();
+Console.Write("Su Correo Electronico: ");
+string Email = Console.ReadLine();
+Console.Write("Ingrese El Valor del producto: $ ");
+float precio = Convert.ToInt64(Console.ReadLine());
+Console.Write("Ingrese la cantidad: ");
+int cantidad = Convert.ToInt32(Console.ReadLine());
+Console.Write("¿Tiene cupon de descuento?: ");
+bool Cupon = Convert.ToBoolean(Console.ReadLine());
+if (Cupon=true) // Confirmación de descuento
+{
+    Console.WriteLine("¡¡Tiene un descuento del 15%!!");
+}
+
+float total = 0;
+float descuento = 0;
+
+if (Cupon == true)// calculo del descuento
+{
+    descuento = precio - precio * 15 / 100;
+    total = descuento * cantidad;
+}
+else
+    total = precio* cantidad;
+
+Console.WriteLine($"EL Sr/a. {Nombre} a realizado la compra de {cantidad} productos, por un importe de $ {total}.-, su factura sera enviada a {Email}");
+Console.WriteLine("GRACIAS POR SU COMPRA");
+
+Console.WriteLine();
+Console.WriteLine("******************************************************************");
+Console.WriteLine();
+/*
+Ejercicio 2 - Switch
+Haz una lista de lenguajes de programación, por ejemplo: C#, Java, C++. Presenta la lista en consola y pide que el usuario 
+seleccione el lenguaje mediante 1, 2, 3 o a, b, c. Presenta el resultado en consola.
+Nota: puedes añadir al resultado el “Hola, mundo” para el caso de C#.
+*/
+
+Console.WriteLine("Ejercicio 2");
+Console.WriteLine();
+string eleccion = null;
+List<String> Programas = new List<string>();// Creación de Lista
+Programas.Add("C#");
+Programas.Add("Java");
+Programas.Add("C++");
+Programas.Add("Python");
+
+Console.WriteLine("-ESTOS SON LOS PROGRAMAS QUE OFRECE NUESTRO CURSO-");
+Console.WriteLine();
+for (int i = 0; i <= 3; i++) // Se muestran las opciones de la lista
+{
+    string programas = Programas[i];
+    Console.WriteLine($"{i+1}º: {programas}");
+}
+Console.WriteLine();
+Console.WriteLine("Ingrese el curso que desea realizar: "); // Se ingresa la opcion del curso y se muestra la opcion
+int opcion = Convert.ToInt32(Console.ReadLine());
+if (opcion == 2 || opcion == 3 || opcion == 4)
+{
+    eleccion = Programas[opcion - 1];
+    Console.WriteLine($"Eligio el Curso: {eleccion}");
+}
+else if (opcion == 1)
+{
+    eleccion = Programas[opcion - 1];
+    Console.WriteLine($"Eligio el Curso: {eleccion} -Hola Mundo-"); // Variable si se elige C#
+}
+        
+
+
+
