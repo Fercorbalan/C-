@@ -1,0 +1,53 @@
+/* Ejercicios 
+ * Variables y Operaciones
+ 
+ * Recibir por consola los 7 días de la semana y comprobar que estan "bien escritos" -> si: lunes, Lunes
+ * Opcional: reproducir con los meses del año
+ 
+*/
+
+Console.WriteLine("Ingrese los dia de la semana: ");
+
+string dia = null;
+for (int i = 0; i < 7; i++)
+{
+    
+    Console.Write($"Ingrese el {i + 1}º día: ");
+    dia = Console.ReadLine();
+
+    if (dia == "Lunes" || dia == "Martes" || dia == "Miercoles" || dia == "Jueves" || dia == "Viernes" || dia == "Sabado" || dia == "Domingo")
+    {
+        i++;
+        switch (dia)
+        {
+            case "Lunes":
+                 Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            case "Martes":
+                Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            case "Miercoles":
+                Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            case "Jueves":
+                Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            case "Viernes":
+                Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            case "Sabado":
+                Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            case "Domingo":
+                Console.WriteLine($"El día {dia} esta escrito Correctamente");
+                break;
+            default:
+                Console.WriteLine("Escriba el dia correctamente");
+                break;
+        }
+    }
+     
+    else Console.WriteLine("Error en su escritura - Escriba correctamente el Día: ");
+    i--;
+}
+Console.WriteLine("Los días se han escrito correctamente");
