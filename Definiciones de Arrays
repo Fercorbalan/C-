@@ -1,0 +1,106 @@
+using System.Text;
+
+Console.WriteLine("Clase Arrays");
+Console.WriteLine("Armado de Listas Integer");
+List<int> lista = new List<int>();  //Armado de una lista para completar
+Console.WriteLine("Ingrese la cantidad de elementos de la lista: ");
+int cantidad = Convert.ToInt32(Console.ReadLine());
+for (int i = 0; i < cantidad; i++)
+{
+    Console.Write($"Ingrese el {i+1}º elemento de la lista: ");
+    lista.Add(Convert.ToInt32(Console.ReadLine()));
+}
+
+for (int i = 0; i < lista.Count; i++) // muestra la lista
+{
+    int numero = lista[i];
+    Console.WriteLine($"El {i+1}º numero de la lista es: " + numero);
+}
+
+
+
+//Interpolación
+
+var persona = (nombre: "Cesar", nacimiento: 1989f, edad: "32", lenguaje: "C#");
+Console.WriteLine($"El nombre de la persona es: {persona.nombre}, su año de nacimiento: {persona.nacimiento}, \ntiene {persona.edad}, y le gusta programar en {persona.lenguaje}");
+
+// subcadenas
+
+string micadena = "Este es mi mensaje";
+
+Console.WriteLine(micadena);
+
+//substring
+
+string micadena2 = micadena.Substring(0, 10); // Corto los 10 primeros caracteres de la cadena (string)
+
+Console.WriteLine(micadena2);
+
+//Replace
+string micadena3 = micadena.Replace("mensaje", "podscast");
+
+Console.WriteLine(micadena3);
+
+//Limpiar espacios
+string micadena4 = micadena.Trim();
+Console.WriteLine(micadena4);
+
+//buscar elementos
+
+int index = micadena.IndexOf("m");
+Console.WriteLine(index);
+
+//StringBuilder
+
+StringBuilder strBuilder = new StringBuilder();
+
+
+// Transformar String en INt
+
+decimal e = 0;
+string s = "11.1";
+bool result = decimal.TryParse(s, out e);
+Console.WriteLine(result + ", i: " + e);
+
+Console.WriteLine($"sumamos {e} + 15 el resultado es: " + (e + 1));
+
+
+//Ordenar arrays
+
+
+int[] numbers = { 1, 3, 8, 5, 9 };
+for (int i = 0; i < numbers.Length; i++)
+{
+    Console.Write(numbers[i]);
+}
+Console.WriteLine("");
+
+Array.Sort(numbers); // ordena la lista.
+
+Console.WriteLine("Metodo Sort ordena lista: ");
+for (int i = 0; i < numbers.Length; i++)
+{
+    Console.Write(numbers[i]);
+}
+
+
+Console.WriteLine();
+Console.WriteLine();
+
+// Arrays Multidimencionales
+
+int[,] miArray2D = new int[2, 2];
+
+miArray2D[0, 0] = 1;
+miArray2D[0, 1] = 2;
+miArray2D[1, 0] = 3;
+miArray2D[1, 1] = 4;
+
+for (int k = 0; k < 2; k++)
+{
+    for (int j = 0; j < 2; j++)
+    {
+        Console.Write(miArray2D [k,j]+" ");
+    }
+    Console.WriteLine(" ");
+}
